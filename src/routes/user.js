@@ -9,6 +9,7 @@ router.get("/allassets",Validate,UserController.getAllAssets)
 router.get("/editasset/:id",Validate,UserController.getAssetById) 
 router.post( '/signup',UserController.signUp)
 router.post( "/login",UserController.login);
+router.post( "/generate-bill",UserController.pdfGenerator);
 router.post("/addassets",AdminGuard,Validate,UserController.addAssets);
 router.put("/allassets/:id",AdminGuard,Validate,UserController.editAssets)
 router.delete("/deleteasset/:id",AdminGuard,Validate,UserController.deleteAsset)    
