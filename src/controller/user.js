@@ -41,7 +41,7 @@ const updateStockAfterBill = async (items) => {
 };
 
 const pdfGenerator = async (req, res) => {
-    const { customer, items, totalAmount } = req.body;
+    const { customer, items, totalAmount ,company_name} = req.body;
 
     try {
         const nextBillNo = await getNextBillNo();
@@ -91,6 +91,7 @@ const pdfGenerator = async (req, res) => {
         const newBill = new BillModel({
             billNo: nextBillNo,
             customer: customer.customerName,
+            company_name:company_name,
             items: enrichedItems,
             totalAmount: totalAmount,
             totalProfit: totalProfit

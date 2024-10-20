@@ -5,6 +5,10 @@ const billSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    company_name: {
+        type: String,
+        required: [true, 'Company name is required']
+    },
     customer: {
         type: String,
         required: [true, 'Customer name is required']
